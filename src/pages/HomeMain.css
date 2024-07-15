@@ -1,0 +1,35 @@
+.top-body {
+    height: 80vh;    
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    border-bottom: 2px solid rgb(202, 202, 202);
+}
+body {
+    background: #fcfdff;
+}
+.update-table {
+    background-color: #fdfeff;
+}
+.update-report-heading {
+    color: #1d1c1c;
+    font-size: 21px;
+    /*font-family: "Poppins", sans-serif;
+    font-style:normal;*/
+    font-weight:400;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.update-report-heading span {
+
+    background-color: #cee2a1;
+
+    padding: 10px 30px 12px 30px;
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid #888888;
+    border-bottom: transparent;
+    box-shadow: 4px -2px 2px 1px #d8d8d8;
+    /*border-bottom: 1px solid rgb(156, 156, 156);*/
+}

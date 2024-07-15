@@ -1,0 +1,42 @@
+.table-budget {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap:25px;
+    align-items: center;
+}
+
+.table-budget-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+}
+.tablebudget-type {
+    grid-column: 1/2;
+}
+.table1-label2 input,.table1-label1 input{
+    margin-right: 5px;
+}
+
+.css-apqrd9-MuiTableBody-root {
+    border: 1px solid rgb(201, 201, 201);
+}
+.css-1q1u3t4-MuiTableRow-root {
+    background-color: rgb(255, 255, 255);
+}
+
+.css-1ex1afd-MuiTableCell-root {
+    border: 1px solid rgb(201, 201, 201);
+    /*border-top: transparent;*/
+}
+.Addhead-tablerow{
+    background-color: rgb(240, 244, 250);
+}/*
+.css-1ygcj2i-MuiTableCell-root {
+    border: 1px solid rgb(201, 201, 201);
+    padding: 10px;
+    overflow-x: auto;
+}*/

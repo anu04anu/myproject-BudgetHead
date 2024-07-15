@@ -1,0 +1,18 @@
+.Expenditure-tablerow {
+    background-color: rgb(240, 244, 250);
+}
+#expenditure-table-select {
+    font-size: 15px;
+    width: 100%;
+    padding:2px 10px;
+    margin-left: 10px;
+}
+.table-budget-options2 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+.css-jtlhu6-MuiTablePagination-root {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 0.875rem;
+}

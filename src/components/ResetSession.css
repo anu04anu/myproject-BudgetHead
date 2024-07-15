@@ -1,0 +1,61 @@
+.reset-session{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    top:0px;
+    background-color: rgba(216, 216, 216, 0.726);
+}
+.reset-session-box {
+    width: 50vw;
+    height: 50vh;
+    background-color: #ffffff;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+}
+.reset-session-heading2 {
+    font-size: 20px;
+}
+.reset-session-heading1 {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: rgb(248, 33, 33);
+}
+.reset-session-box span {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.session-options {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.reset-session-cancelbtn,.reset-session-updatebtn {
+    padding: 7px 17px;
+    margin-top: 40px;
+    background-color: transparent;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.reset-session-cancelbtn {   
+    border:1px solid rgb(131, 210, 12);
+    color: rgb(66, 104, 10);
+    background-color: rgb(234, 255, 203);
+}
+.reset-session-updatebtn {
+    border:1px solid rgb(126, 126, 126);
+    color: rgb(99, 99, 99);
+}
+.reset-session-cancelbtn,.reset-session-updatebtn:hover {
+    cursor: pointer;
+}

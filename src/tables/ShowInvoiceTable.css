@@ -1,0 +1,27 @@
+.table-budget-options3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 90%;
+}
+#inoice-table-select {
+    font-size: 15px;
+    width: 80%;
+    padding:2px 10px;
+    margin-left: 20px;
+}
+.invoice-opt1 {
+    width: 90%;
+}
+.table3-label3 input,.table3-label4 input {
+    margin-right: 5px;
+}
+.invoice-tablerow {
+    background-color: rgb(240, 244, 250);
+}
+.css-1ygcj2i-MuiTableCell-root {
+    border: 1px solid rgb(201, 201, 201);
+}

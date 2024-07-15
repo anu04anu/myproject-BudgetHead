@@ -1,10 +1,7 @@
 import React,{useState} from 'react';
 import './Login.css';
-import lock_icon from '../img/lock_icon.png';
-import login_icon from '../img/login_icon.png';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../img/iet-logo.png';
-import budget from '../img/budget.jpg';
 
 function Login({setUser}) {
 

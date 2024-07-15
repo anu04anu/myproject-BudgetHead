@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/myproject-BudgetHead/static/css/main.9d7b9a54.css",
-    "main.js": "/myproject-BudgetHead/static/js/main.e34a463d.js",
+    "main.js": "/myproject-BudgetHead/static/js/main.3f013431.js",
     "static/js/453.b7c9fd1f.chunk.js": "/myproject-BudgetHead/static/js/453.b7c9fd1f.chunk.js",
     "static/media/iet-logo.png": "/myproject-BudgetHead/static/media/iet-logo.24118d3050da228f22dc.png",
     "static/media/img2.jpg": "/myproject-BudgetHead/static/media/img2.c62a761c7b1496498805.jpg",
     "index.html": "/myproject-BudgetHead/index.html",
     "main.9d7b9a54.css.map": "/myproject-BudgetHead/static/css/main.9d7b9a54.css.map",
-    "main.e34a463d.js.map": "/myproject-BudgetHead/static/js/main.e34a463d.js.map",
+    "main.3f013431.js.map": "/myproject-BudgetHead/static/js/main.3f013431.js.map",
     "453.b7c9fd1f.chunk.js.map": "/myproject-BudgetHead/static/js/453.b7c9fd1f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d7b9a54.css",
-    "static/js/main.e34a463d.js"
+    "static/js/main.3f013431.js"
   ]
 }

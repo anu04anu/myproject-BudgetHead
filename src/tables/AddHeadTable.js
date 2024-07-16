@@ -67,6 +67,7 @@ function AddHeadTable({rList,nrList}) {
                 </TableRow>
             ))}
             </TableBody>
+            </Table>
             <TablePagination
               rowsPerPageOptions={[5, 8]}
               component="div"
@@ -79,7 +80,7 @@ function AddHeadTable({rList,nrList}) {
                 overflow: 'unset', // Remove overflow property
               }}
             />
-        </Table>
+       
         </TableContainer>
     </div>
   )

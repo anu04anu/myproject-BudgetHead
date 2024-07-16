@@ -5,7 +5,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import './ShowInvoiceTable.css';
 import TablePagination from '@mui/material/TablePagination';
 import './ShowInvoiceTable.css';
@@ -34,7 +33,6 @@ function ShowInvoiceTable({rList,nrList}) {
 
     const handleRadioChange = (e) => {
         setBudgetType(e.target.value);
-        console.log(e.target.value);
         setList(e.target.value=='recurring'?rList:nrList);
         setselectOption('');
     }
@@ -114,15 +112,15 @@ function ShowInvoiceTable({rList,nrList}) {
                             const tempArray = Object.values(itemOption);
                             
                             if(invoice==='yes' && tempArray[0].length>5) {
-                                console.log(itemOption,'123');
+                                
                                 return itemOption
                             }
                             else if(invoice==='no' && tempArray[0].length===4) {
-                                console.log(itemOption,'456');
+                               
                                 return itemOption
                             }
                         }).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((itemOption, index) => {
-                            console.log(itemOption);
+                            //console.log(itemOption);
                         const tempArray = Object.values(itemOption);
                         return (<TableRow key={index}>
                         <TableCell>{tempArray[0][0]}</TableCell>
@@ -136,7 +134,7 @@ function ShowInvoiceTable({rList,nrList}) {
                         </TableRow>)
                     })}
                     </TableBody>
-                
+                    </Table>
                     {(list[selectedOption]!= undefined && list[selectedOption][1] !== undefined) && <TablePagination
                     rowsPerPageOptions={[3,4]}
                     component="div"
@@ -150,7 +148,7 @@ function ShowInvoiceTable({rList,nrList}) {
                     }}
                     />}
                     
-                </Table>
+               
             </TableContainer>
 
         </div>

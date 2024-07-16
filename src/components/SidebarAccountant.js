@@ -9,7 +9,6 @@ function SidebarAccountant({rList, nrList, tempHandleValues, session}) {
     const classNameNav = 'sidebar-content';
 
     const handleViewModal = (i) => {
-        console.log(i,viewModal,'Sidebar');
         
         const tempviewModal = viewModal.map((element,index)=>{
             if(i===index) {
@@ -23,7 +22,6 @@ function SidebarAccountant({rList, nrList, tempHandleValues, session}) {
     }
 
     const handleInvoice = (budgetType, details) =>{
-        console.log(budgetType,details, 'acc');
         tempHandleValues(3,budgetType, details);
     }
    

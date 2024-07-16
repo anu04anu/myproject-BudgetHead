@@ -5,7 +5,7 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
 
   const [budgetType,setBudgetType] = useState('');
   const [headList,setheadList] = useState('');
-  const [selectedOption,setselectOption] = useState();
+  const [selectedOption,setselectOption] = useState('');
   const [itemName,setitemName] = useState('');
   const [descriptionContent,setdescriptionContent] = useState('');
   const [amount,setamount] = useState();
@@ -19,7 +19,7 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
   const handleRadioChange = (e) => {
     setBudgetType(e.target.value);
     setheadList(e.target.value=='recurring'?rList:nrList);
-    //console.log(Object.keys(e.target.value=='recurring'?rList:nrList),'radio')
+    
     setselectOption(Object.keys(e.target.value=='recurring'?rList:nrList)[0]);
     setError([false,'']);
   }
@@ -37,10 +37,15 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
 
   const handleAmount = (e) => {
     if(budgetType=='') {
-      setError([true,'Select budget type !!!']);
+      setError([true,'Select Budget Type !!!']);
       return;
     }
-    error[0]==true?setError([false,'']):console.log('fine');
+    console.log(selectedOption,'123');
+    if(selectedOption=='' || selectedOption==undefined) {
+      setError([true,'Complete above fields !!!']);
+      return;
+    }
+    //error[0]==true?setError([false,'']):console.log('fine');
     const temp = e.target.value;
     let tempAmt = 0.0;
     //console.log(selectedOption, headList[selectedOption],' fgegeg');
@@ -49,9 +54,9 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
     (headList[selectedOption][1] || []).forEach(element => {
       const tempArr = Object.values(element);
       tempAmt = tempAmt + parseFloat(tempArr[0][2]);
-      //console.log(tempArr[0][2],'  dvd', tempAmt);
+      
     });
-    //console.log(tempAmt,' ggg ',tempBudget,' fef ',temp);
+   
     if((temp)>(tempBudget-tempAmt)) {
       setError([true,'Amount crossed for this budgetHead.']);
       return;
@@ -64,8 +69,13 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
 
   const handleItem = async(e) =>{
     e.preventDefault();
-    if(itemName.length===0 || descriptionContent.length===0 || amount==0 && error[0]===true) {
-      setError([true,'Enter details in every field.']);
+    
+    if(error[0]===true) {
+      setError([false,'']);      
+    }
+    if(budgetType=='' || selectedOption==undefined || itemName.length===0 || descriptionContent.length===0 || amount==0) 
+       {
+      alert('Enter details in every field.');
       return;
     }
    /* const form = e.target;
@@ -132,7 +142,7 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
 
           <label htmlFor="expenditureNameInput" className='text1 expenditure-label2'> Enter Service : </label>
             <input type='text' id='expenditureNameInput' className='text3' name='service'
-             onChange={(e)=> setitemName(e.target.value)} value={itemName}/>
+             onChange={(e)=> { setitemName(e.target.value); setError([false,'']);}} value={itemName}/>
 
           <label htmlFor="amountInput" className='text1 expenditure-label3'> Enter Amount : </label>
             <input type='number' id='amountInput' className='text3' name='serviceAmount' value={amount}
@@ -140,7 +150,7 @@ function ExpenditureHeaditem({rList, nrList, temphandleheadlist, session}) {
           
           <label htmlFor="descriptionInput" className='text1 expenditure-label4'> Enter Description : </label>
           <textarea id='descriptionInput' value={descriptionContent}  className='text3' name='serviceDesc'
-              onChange={e => setdescriptionContent(e.target.value)}/>
+              onChange={e => {setdescriptionContent(e.target.value); setError([false,'']);}}/>
          
           {!isPending && <button  className='modal-button exp'>Add</button>}
           {isPending && <button className='modal-button'>Adding...</button>}

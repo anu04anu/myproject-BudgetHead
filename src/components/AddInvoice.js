@@ -4,7 +4,7 @@ import './AddInvoice.css';
 
 function AddInvoice({rList, nrList,temphandlelist, session}) {
 
-    console.log('123 123',rList);
+    //console.log('123 123',rList);
     const [budgetType, setBudgetType] = useState('recurring');
     const [headList,setheadList] = useState(rList); //rlist or nrList
     const [selectedOption,setselectOption] = useState(Object.keys(rList)[0] || Object.keys(nrList)[0]);
@@ -12,7 +12,7 @@ function AddInvoice({rList, nrList,temphandlelist, session}) {
     const [showTable, setshowTable] = useState(true);
     const [invoiceNo, setinvoiceNo] = useState('');
     const [payDate, setpayDate] = useState('');
-    const [selectedIndex,setSelectedIndex] = useState(0); //item for which invoice will be added
+    const [selectedIndex,setSelectedIndex] = useState(''); //item for which invoice will be added
     const [error, setError] = useState([false,'']);
     const [isPending, setIsPending] = useState(false);
 
@@ -46,6 +46,9 @@ function AddInvoice({rList, nrList,temphandlelist, session}) {
         }
     }
 
+    const handleRowSelection = (tempIndex) => {
+      setSelectedIndex(tempIndex);
+    }
 
     const handleInvoiceForm = async(e) =>{
       e.preventDefault();
@@ -74,7 +77,7 @@ function AddInvoice({rList, nrList,temphandlelist, session}) {
           if(!response.ok) {
             throw new Error('Could not update.');
           }*/
-
+          console.log(selectedIndex);
           const details = [selectedOption,selectedIndex,invoiceNo,payDate];
           //console.log(details,' invoicedetails');
           setinvoiceNo(''); setpayDate('');  
@@ -129,7 +132,7 @@ function AddInvoice({rList, nrList,temphandlelist, session}) {
           </select>
 
           {!error[0] && showTable && <InvoiceTable headListOption={ Object.keys(headList).length!==0?headList[selectedOption][1]:[]} 
-                          selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/> }
+                          selectedIndex={selectedIndex} handleRowSelection={handleRowSelection}/> }
 
           <label htmlFor="invoice-select-invoicenumb" className='text1 invoice-select-label-3'> 
                     Enter invoice no. : </label>

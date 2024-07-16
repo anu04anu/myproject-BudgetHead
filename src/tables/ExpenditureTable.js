@@ -15,7 +15,7 @@ function ExpenditureTable({rList,nrList}) {
     const [list,setList] = useState(rList);
     const [selectedOption,setselectOption] = useState('');
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(3);
+    const [rowsPerPage, setRowsPerPage] = useState(4);
 
     useEffect(() => {
         setList(budgetType=='recurring'?rList:nrList)
@@ -41,7 +41,6 @@ function ExpenditureTable({rList,nrList}) {
 
     const handleRadioChange = (e) => {
         setBudgetType(e.target.value);
-        console.log(e.target.value);
         setList(e.target.value=='recurring'?rList:nrList);
         setselectOption('');
         //setselectOption(e.target.value=='recurring'?Object.keys(rList)[0]);
@@ -50,7 +49,7 @@ function ExpenditureTable({rList,nrList}) {
     const handleHeadName = (e) => {
         setselectOption(e.target.value);
     }
-    console.log('12',budgetType,selectedOption)
+   
     return (
     <div className='table-budget'>
         <div className='table-budget-options'>
@@ -101,9 +100,9 @@ function ExpenditureTable({rList,nrList}) {
                 </TableRow>)
             })}
             </TableBody>
-           
+            </Table>
             {(list[selectedOption]!= undefined && list[selectedOption][1] !== undefined) && <TablePagination
-              rowsPerPageOptions={[3, 4]}
+              rowsPerPageOptions={[4, 6]}
               component="div"
               count={list[selectedOption][1].length}
               rowsPerPage={rowsPerPage}
@@ -115,7 +114,7 @@ function ExpenditureTable({rList,nrList}) {
               }}
             />}
             
-            </Table>
+            
         </TableContainer>
     </div>
   )

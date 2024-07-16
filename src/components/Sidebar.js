@@ -34,9 +34,6 @@ function Sidebar({rList, nrList, tempHandleValues, budgetReport, session}) {
         setviewModal(tempviewModal);
     }
 
-    console.log(rList,' sidebar');
-    console.log(nrList,' 123sidebar');
-
   return (
     <div className='siderbar-container'>
         <ul className='sidebar-navigation'>

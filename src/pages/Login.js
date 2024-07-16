@@ -17,9 +17,8 @@ function Login({setUser}) {
         if(loginUser=='director') {
             if(e.target.pass.value==password[0]) {
                 setErrorMessages('');
-                console.log('navigate');
                 setUser(loginUser);
-                navigate('/home');
+                navigate('/');
             }
             else {
                 setErrorMessages('* wrong password');
@@ -29,7 +28,7 @@ function Login({setUser}) {
             if(e.target.pass.value==password[2]) {
                 setErrorMessages('');
                 setUser(loginUser);
-                navigate('/home');
+                navigate('/');
             }
             else {
                 setErrorMessages('* wrong password');
@@ -39,7 +38,7 @@ function Login({setUser}) {
                 if(e.target.pass.value==password[1]) {
                     setErrorMessages('');
                     setUser(loginUser);
-                    navigate('/home');
+                    navigate('/');
                 }
                 else {
                     setErrorMessages('* wrong password');

@@ -10,9 +10,7 @@ import StartData from '../data/tempBudget.json';
 function Home({user,handleLogout}) {
  
   const [recurringHeadList, setRecurringHeadList] = useState(() => {
-    console.log(localStorage);
     const storedData = localStorage.getItem('recurringHeadList');
-    //if( storedData && StartData.rc!==storedData )
     return storedData ? JSON.parse(storedData) : StartData.rc;
   });
   
@@ -71,7 +69,7 @@ function Home({user,handleLogout}) {
   //Not Using, do not uncomment.
   useEffect(() => {
     localStorage.setItem('recurringHeadList', JSON.stringify(recurringHeadList));
-    console.log('Saving to localStorage:', recurringHeadList);
+    //console.log('Saving to localStorage:', recurringHeadList);
   }, [recurringHeadList]);
 
   useEffect(() => {
@@ -117,7 +115,7 @@ function Home({user,handleLogout}) {
     }
 
     const handleValues = (functionIndex, budgetType, details) => {
-      //console.log(recurringHeadList,' home 123');
+      //console.log(recurringHeadList);
       const [headList,setHeadList] = budgetType==='recurring'?[recurringHeadList,setRecurringHeadList]:
         [nonrecurringHeadList,setNonRecurringHeadList];
       //console.log(headList, budgetType==='recurring'?recurringHeadList:'no');

@@ -19,14 +19,14 @@ function App() {
   
   const handleLogout = () => {
     setUser('');
-    navigate('/');
+    navigate('/login');
   }
 
   return (
     <>
       <Routes> 
-      <Route path='/' element={<Login setUser={setUser}/>}/>
-      <Route path='/home' element={<Home user={user} handleLogout={handleLogout} />}/>
+      <Route path='/login' element={<Login setUser={setUser}/>}/>
+      <Route path='/' element={<Home user={user} handleLogout={handleLogout} />}/>
       </Routes>
     </>
   );

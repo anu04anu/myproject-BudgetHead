@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import './InvoiceTable.css';
 
-function InvoiceTable({headListOption,selectedIndex,setSelectedIndex}) {
-    
+function InvoiceTable({headListOption,selectedIndex,handleRowSelection}) {
+
     const handleRowSelect = (tempselectedIndex) => {
     
-      console.log('invoice selected key',tempselectedIndex);
-      
-      setSelectedIndex(tempselectedIndex);
+      console.log(selectedIndex,'invoice selected key',tempselectedIndex);
+      handleRowSelection(tempselectedIndex);
     };
-
+   
     const filteredData = (headListOption || []).filter((item) => {
         const tempkey = Object.keys(item)[0];
-        console.log('invoice-table',item);
+        //console.log('invoice-table',item);
         return item[tempkey].length<5; // Assuming the service/item is the first element in the array
     });
-
+    console.log(selectedIndex);
   return (
     <div className='invoice-tablecontainer'>
     <table className='invoice-table'>
@@ -38,8 +37,8 @@ function InvoiceTable({headListOption,selectedIndex,setSelectedIndex}) {
             {/* since Eid is not being received presently.*/}
             <td className='invoice-table-data'>{(Object.values(item)[0][3]).toLocaleString()}</td>
             <td className='invoice-table-data'>
-              <input 
-                type="radio" name="selectedRow" value={selectedIndex} onChange={() => handleRowSelect(Object.keys(item)[0])} 
+              <input type="radio" name="selectedRow" checked ={selectedIndex==Object.keys(item)[0]}
+                value={Object.keys(item)[0]} onChange={() => handleRowSelect(Object.keys(item)[0])} 
               />
             </td>
           </tr>
